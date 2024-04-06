@@ -15,7 +15,7 @@ namespace TrendGraphix.Avalonia
     {
         public Plot Plot
         {
-            get => StockChart.Plot;
+            get => StockChart.PricePlot;
         }
 
         public IPlotInteraction Interaction { get; set; }

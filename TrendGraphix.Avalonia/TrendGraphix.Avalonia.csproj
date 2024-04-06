@@ -22,4 +22,9 @@
 	  <ProjectReference Include="..\TrendGraphix\TrendGraphix.csproj" />
 	</ItemGroup>
 
+
+	<ItemGroup>
+	  <UpToDateCheckInput Remove="Chart.axaml" />
+	</ItemGroup>
+
 </Project>

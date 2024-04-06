@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendGraphix", "TrendGraphix\TrendGraphix.csproj", "{51BD8DF6-F90E-473A-8D5C-7010F6A11332}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrendGraphix", "TrendGraphix\TrendGraphix.csproj", "{51BD8DF6-F90E-473A-8D5C-7010F6A11332}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendGraphix.WPF", "TrendGraphix.WPF\TrendGraphix.WPF.csproj", "{DF799111-2B70-48C2-9AE0-2744F3C7A38F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrendGraphix.WPF", "TrendGraphix.WPF\TrendGraphix.WPF.csproj", "{DF799111-2B70-48C2-9AE0-2744F3C7A38F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendGraphix.Avalonia", "TrendGraphix.Avalonia\TrendGraphix.Avalonia.csproj", "{9513E7C2-8647-4C0B-B971-E40AF2BEB752}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrendGraphix.Avalonia", "TrendGraphix.Avalonia\TrendGraphix.Avalonia.csproj", "{9513E7C2-8647-4C0B-B971-E40AF2BEB752}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendGraphix.Avalonia.Demo", "TrendGraphix.Avalonia.Demo\TrendGraphix.Avalonia.Demo.csproj", "{8D8FAC54-C64F-40E3-A1C3-A467B1F7BAA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrendGraphix.Avalonia.Demo", "TrendGraphix.Avalonia.Demo\TrendGraphix.Avalonia.Demo.csproj", "{8D8FAC54-C64F-40E3-A1C3-A467B1F7BAA3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrendGraphix.Indicators", "TrendGraphixIndicators\TrendGraphix.Indicators.csproj", "{40334390-4141-460D-A31D-E996C92C0D5F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{8D8FAC54-C64F-40E3-A1C3-A467B1F7BAA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D8FAC54-C64F-40E3-A1C3-A467B1F7BAA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D8FAC54-C64F-40E3-A1C3-A467B1F7BAA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40334390-4141-460D-A31D-E996C92C0D5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40334390-4141-460D-A31D-E996C92C0D5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40334390-4141-460D-A31D-E996C92C0D5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40334390-4141-460D-A31D-E996C92C0D5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
