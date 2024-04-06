@@ -7,6 +7,6 @@
 			 Name="chartControl"
              x:Class="TrendGraphix.Avalonia.Chart">
 	<Grid>
-		<local:AvaPlot/>
+		<local:AvaPlot Name="plot"/>
 	</Grid>
 </UserControl>

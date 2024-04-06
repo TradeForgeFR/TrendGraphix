@@ -13,6 +13,8 @@ namespace TrendGraphix.Avalonia
 {
     public class AvaPlot : Controls.Control, IPlotControl
     {
+        public static readonly StyledProperty<StockChartModel> StockChartProperty =
+        AvaloniaProperty.Register<AvaPlot, StockChartModel>(nameof(StockChart));
         public Plot Plot
         {
             get => StockChart.PricePlot;
@@ -23,12 +25,19 @@ namespace TrendGraphix.Avalonia
 
         public GRContext? GRContext => null;
 
-        public StockChart StockChart { get; } = new StockChart();
+        public StockChartModel StockChart
+        {
+            get { return GetValue(StockChartProperty); }
+            set { SetValue(StockChartProperty, value);}
+        }
         public float DisplayScale { get; set; }
 
         public AvaPlot()
         {
-            
+            StockChart = new StockChartModel()
+            {
+                ChartType = ChartType.Line
+            };
             ClipToBounds = true;
             DisplayScale = DetectDisplayScale();
             Interaction = new ScottPlot.Control.Interaction(this);
