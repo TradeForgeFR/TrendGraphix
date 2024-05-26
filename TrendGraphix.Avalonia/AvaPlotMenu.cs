@@ -9,9 +9,9 @@ namespace TrendGraphix.Avalonia
     {
         public string DefaultSaveImageFilename { get; set; } = "Plot.png";
         public List<ContextMenuItem> ContextMenuItems { get; set; } = new();
-        private readonly AvaPlot ThisControl;
+        private readonly ChartControl ThisControl;
 
-        public AvaPlotMenu(AvaPlot avaPlot)
+        public AvaPlotMenu(ChartControl avaPlot)
         {
             ThisControl = avaPlot;
             Reset();

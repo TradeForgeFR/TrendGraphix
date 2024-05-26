@@ -14,17 +14,12 @@
 		</PackageReference>
 		<PackageReference Include="Avalonia" Version="11.0.10" />
 		<PackageReference Include="Avalonia.Skia" Version="11.0.10" />
-		<PackageReference Include="ScottPlot" Version="5.0.22" />
+		<PackageReference Include="ScottPlot" Version="5.0.34" />
 	</ItemGroup>
 
 
 	<ItemGroup>
 	  <ProjectReference Include="..\TrendGraphix\TrendGraphix.csproj" />
-	</ItemGroup>
-
-
-	<ItemGroup>
-	  <UpToDateCheckInput Remove="Chart.axaml" />
 	</ItemGroup>
 
 </Project>

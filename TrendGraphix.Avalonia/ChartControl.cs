@@ -8,13 +8,14 @@ using Avalonia.Threading;
 using SkiaSharp;
 using Controls = Avalonia.Controls;
 using ScottPlot;
+using TrendGraphix.Models;
 
 namespace TrendGraphix.Avalonia
 {
-    public class AvaPlot : Controls.Control, IPlotControl
+    public class ChartControl : Controls.Control, IPlotControl
     {
         public static readonly StyledProperty<StockChartModel> StockChartProperty =
-        AvaloniaProperty.Register<AvaPlot, StockChartModel>(nameof(StockChart));
+        AvaloniaProperty.Register<ChartControl, StockChartModel>(nameof(StockChart));
         public Plot Plot
         {
             get => StockChart.PricePlot;
@@ -32,7 +33,7 @@ namespace TrendGraphix.Avalonia
         }
         public float DisplayScale { get; set; }
 
-        public AvaPlot()
+        public ChartControl()
         {
             StockChart = new StockChartModel()
             {
@@ -146,5 +147,8 @@ namespace TrendGraphix.Avalonia
             // https://github.com/ScottPlot/ScottPlot/issues/2760
             return 1.0f;
         }
+
+        public void Reset() => throw new NotImplementedException();
+        public void Reset(Plot plot) => throw new NotImplementedException();
     }
 }

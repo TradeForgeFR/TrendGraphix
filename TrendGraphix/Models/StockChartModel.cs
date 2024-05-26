@@ -1,9 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using ScottPlot;
 using ScottPlot.Plottables;
-using TrendGraphix.Models;
 
-namespace TrendGraphix
+namespace TrendGraphix.Models
 {
     public enum ChartType : int
     {
@@ -12,7 +11,7 @@ namespace TrendGraphix
         Line = 2,
         Dot = 3
     }
-    public class StockChartModel 
+    public class StockChartModel
     {
         #region private fields
         private OhlcPlot _holcPlot;
@@ -21,14 +20,14 @@ namespace TrendGraphix
         private Scatter _dotPlot;
         ChartType _chartType = ChartType.Line;
         #endregion
-        public StockChartModel() 
-        { 
+        public StockChartModel()
+        {
             Init();
         }
-       
+
         private void Init()
         {
-            PriceDatas.AddRange(ScottPlot.Generate.RandomOHLCs(450).Select(x => new PriceModel()
+            PriceDatas.AddRange(Generate.RandomOHLCs(2000).Select(x => new PriceModel()
             {
                 Open = x.Open,
                 High = x.High,
@@ -36,21 +35,21 @@ namespace TrendGraphix
                 Close = x.Close,
                 Time = x.DateTime
             }));
-             
+
             PricePlot.Axes.DateTimeTicksBottom();
 
-            _holcPlot = PricePlot.Add.OHLC(PriceDatas.Select(x=> new OHLC()
+            _holcPlot = PricePlot.Add.OHLC(PriceDatas.Select(x => new OHLC()
             {
-                 DateTime=x.Time,
-                 Open = x.Open,
-                 High= x.High,
-                 Low= x.Low,
-                 Close= x.Close,
-            }).ToList()); 
+                DateTime = x.Time,
+                Open = x.Open,
+                High = x.High,
+                Low = x.Low,
+                Close = x.Close,
+            }).ToList());
 
             _holcPlot.Axes.YAxis = PricePlot.Axes.Right;
-            _holcPlot.FallingStyle.Width = 1;
-            _holcPlot.RisingStyle.Width = 1;
+           // _holcPlot.FallingStyle.Width = 1;
+          //  _holcPlot.RisingStyle.Width = 1;
             _holcPlot.IsVisible = false;
 
             _candlestickPlot = PricePlot.Add.Candlestick(PriceDatas.Select(x => new OHLC()
@@ -64,11 +63,11 @@ namespace TrendGraphix
 
 
             _candlestickPlot.Axes.YAxis = PricePlot.Axes.Right;
-           // _candlestickPlot.FallingLineStyle.Width = 1;
-           // _candlestickPlot.RisingLineStyle.Width = 1;
-            _candlestickPlot.IsVisible = false;
+             _candlestickPlot.FallingLineStyle.Width = 1;
+             _candlestickPlot.RisingLineStyle.Width = 1;
+           // _candlestickPlot.IsVisible = false;
 
-            _linePlot = PricePlot.Add.Scatter(PriceDatas.Select(x => x.Time).ToList(), PriceDatas.Select(x=> x.Close).ToList());
+            _linePlot = PricePlot.Add.Scatter(PriceDatas.Select(x => x.Time).ToList(), PriceDatas.Select(x => x.Close).ToList());
             _linePlot.Axes.YAxis = PricePlot.Axes.Right;
             _linePlot.MarkerStyle.IsVisible = false;
             _linePlot.IsVisible = false;
@@ -81,7 +80,7 @@ namespace TrendGraphix
 
         #region public fields
         public Plot PricePlot { get; private set; } = new Plot();
-        public PriceListModel PriceDatas { get; private set;} = new PriceListModel(); 
+        public PriceListModel PriceDatas { get; private set; } = new PriceListModel();
         public ChartType ChartType
         {
             get
@@ -89,17 +88,17 @@ namespace TrendGraphix
                 return _chartType;
             }
             set
-            { 
+            {
                 _chartType = value;
-                _holcPlot.IsVisible = _chartType == ChartType.OHLC;
+               /* _holcPlot.IsVisible = _chartType == ChartType.OHLC;
                 _candlestickPlot.IsVisible = _chartType == ChartType.Candlestick;
                 _linePlot.IsVisible = _chartType == ChartType.Line;
-                _dotPlot.IsVisible= _chartType == ChartType.Dot;
+                _dotPlot.IsVisible = _chartType == ChartType.Dot;*/
 
-                PricePlot.Render();
+                PricePlot.RenderInMemory();
             }
         }
         #endregion
-    } 
+    }
 }
 
